@@ -1,0 +1,474 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A6873F16-57EB-4BE1-AE93-E949EFF9AEAC}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FullVersion</RootNamespace>
+    <AssemblyName>FullVersion</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.76.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Vbe.Interop, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Microsoft.Vbe.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.5.1\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.5.1\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.5.1\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.5.1\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.5.1\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.5.1\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ConsolidatedController.cs" />
+    <Compile Include="Controllers\CostController.cs" />
+    <Compile Include="Controllers\DL.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Summary.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SL_List.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bootstrap-3.3.6-dist\css\bootstrap-theme.css" />
+    <Content Include="bootstrap-3.3.6-dist\css\bootstrap-theme.min.css" />
+    <Content Include="bootstrap-3.3.6-dist\css\bootstrap.css" />
+    <Content Include="bootstrap-3.3.6-dist\css\bootstrap.min.css" />
+    <Content Include="bootstrap-3.3.6-dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="bootstrap-3.3.6-dist\js\bootstrap.js" />
+    <Content Include="bootstrap-3.3.6-dist\js\bootstrap.min.js" />
+    <Content Include="bootstrap-3.3.6-dist\js\npm.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="bootstrap-3.3.6-dist\css\bootstrap-theme.css.map" />
+    <Content Include="bootstrap-3.3.6-dist\css\bootstrap-theme.min.css.map" />
+    <Content Include="bootstrap-3.3.6-dist\css\bootstrap.css.map" />
+    <Content Include="bootstrap-3.3.6-dist\css\bootstrap.min.css.map" />
+    <Content Include="bootstrap-3.3.6-dist\css\vssver2.scc" />
+    <Content Include="bootstrap-3.3.6-dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="bootstrap-3.3.6-dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="bootstrap-3.3.6-dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="bootstrap-3.3.6-dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="bootstrap-3.3.6-dist\fonts\vssver2.scc" />
+    <Content Include="bootstrap-3.3.6-dist\js\vssver2.scc" />
+    <Content Include="DPS Role Ratios\EAIS_DPS_Roleratios.xlsx" />
+    <Content Include="DPS Role Ratios\EAS_DPS_Roleratios.xlsx" />
+    <Content Include="DPS Role Ratios\ECAS_DPS_Roleratios.xlsx" />
+    <Content Include="DPS Role Ratios\ORC_DPS_Roleratios.xlsx" />
+    <Content Include="DPS Role Ratios\SAP_DPS_Roleratios.xlsx" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts_1\bootstrap.min.css" />
+    <Content Include="Scripts_1\bootstrap.min.js" />
+    <Content Include="Scripts_1\jquery-1.10.2.js" />
+    <None Include="Scripts_1\jquery-1.7.1.intellisense.js" />
+    <Content Include="Scripts_1\jquery-1.7.1.js" />
+    <Content Include="Scripts_1\jquery-1.7.1.min.js" />
+    <Content Include="Scripts_1\jquery-ui-1.8.20.js" />
+    <Content Include="Scripts_1\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts_1\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts_1\jquery.unobtrusive-ajax.min.js" />
+    <None Include="Scripts_1\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts_1\jquery.validate.js" />
+    <Content Include="Scripts_1\jquery.validate.min.js" />
+    <Content Include="Scripts_1\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts_1\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts_1\knockout-2.1.0.debug.js" />
+    <Content Include="Scripts_1\knockout-2.1.0.js" />
+    <Content Include="Scripts_1\modernizr-2.5.3.js" />
+    <None Include="Scripts_1\_references.js" />
+    <Content Include="Select2\JScriptSelect2.js" />
+    <Content Include="Select2\select2.css" />
+    <Content Include="template\BK\Data_Binding_Formating - BK.txt" />
+    <Content Include="template\BK\Data_Binding_Formating_1.txt" />
+    <Content Include="template\BK\Data_Binding_Formating_Old.txt" />
+    <Content Include="template\ClientCategory\CC.txt" />
+    <Content Include="template\ClientCategory\CC_data.txt" />
+    <Content Include="template\ClientCategory\CC_Digital.txt" />
+    <Content Include="template\ClientCategory\SL_Slicer.txt" />
+    <Content Include="template\ClientCategory\SL_Slicer_Digital.txt" />
+    <Content Include="template\Data_Binding_Formating.txt" />
+    <Content Include="template\Fetch_Macro.txt" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Select2\vssver2.scc" />
+    <Content Include="SummaryFiles\Attrition_Data_06Jun2020.xlsx" />
+    <Content Include="SummaryFiles\Attrition_Data_Apr%2720.xlsx" />
+    <Content Include="SummaryFiles\Attrition_Data_Dec_v1.xlsx" />
+    <Content Include="SummaryFiles\Attrition_Data_Feb21.xlsx" />
+    <Content Include="SummaryFiles\Attrition_Data_Jan%2721.xlsx" />
+    <Content Include="SummaryFiles\Attrition_Data_Mar21.xlsx" />
+    <Content Include="SummaryFiles\Attrition_Data_template.xlsx" />
+    <Content Include="SummaryFiles\Attrition_NovFY21.xlsx" />
+    <Content Include="SummaryFiles\Attrition_Nov_FY21.xlsx" />
+    <Content Include="SummaryFiles\Attrition_Oct FY%2721.xlsx" />
+    <Content Include="SummaryFiles\Attrition_Q1_FY21.xlsx" />
+    <Content Include="SummaryFiles\Attrition_Sep21.xlsx" />
+    <Content Include="SummaryFiles\CustomerCode.xlsx" />
+    <Content Include="SummaryFiles\EAS Report_Open_01May2020.xlsx" />
+    <Content Include="SummaryFiles\Talent Mobility KPI Report New_Apr20.xlsx" />
+    <Content Include="SummaryFiles\Talent Mobility_6Mar2021.xlsx" />
+    <Content Include="SummaryFiles\Talent Mobility_Aug.xlsx" />
+    <Content Include="SummaryFiles\Talent Mobility_Dec20.xlsx" />
+    <Content Include="SummaryFiles\Talent Mobility_Dec20_v1.xlsx" />
+    <Content Include="SummaryFiles\Talent Mobility_Feb21.xlsx" />
+    <Content Include="SummaryFiles\Talent Mobility_Jan21.xlsx" />
+    <Content Include="SummaryFiles\Talent Mobility_Jun.xlsx" />
+    <Content Include="SummaryFiles\Talent Mobility_Jun2020.xlsx" />
+    <Content Include="SummaryFiles\Talent Mobility_KPI_Report_May2020.xlsx" />
+    <Content Include="SummaryFiles\Talent Mobility_Nov20.xlsx" />
+    <Content Include="SummaryFiles\Talent Mobility_Oct2020.xlsx" />
+    <Content Include="SummaryFiles\Talent Mobility_Sep20.xlsx" />
+    <Content Include="SummaryFiles\Talent Mobility_template.xlsx" />
+    <Content Include="SummaryFiles\Talent_Mobility_6Mar2021.xlsx" />
+    <Content Include="SummaryFiles\Talent_Mobility_KPI_Report_May2020.xlsx" />
+    <Content Include="Summary\EAS_CostOptim_SummarySheets.xlsx" />
+    <Content Include="Summary\EAS_CostOptim_SummarySheets_12_Aug_2019.xlsx" />
+    <Content Include="Summary\EAS_Cost_Optim_Summary_Report_09_Aug_2019.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_03_Feb_2021.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_04_Feb_2021.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_04_Mar_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_05_May_2021.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_05_Nov_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_06_Nov_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_07_Feb_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_08_Feb_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_08_May_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_08_Nov_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_08_Sep_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_09_Apr_2021.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_09_Dec_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_09_Feb_2021.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_09_Jan_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_09_Jun_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_09_Mar_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_09_May_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_09_Nov_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_09_Sep_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_10_Dec_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_10_Feb_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_10_Feb_2021.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_10_Jun_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_10_Mar_2021.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_10_Nov_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_11_Feb_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_11_Feb_2021.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_11_Jan_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_11_Mar_2021.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_11_Sep_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_12_Nov_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_14_Jan_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_14_Oct_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_15_Apr_2021.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_15_Jan_2021.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_15_Jul_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_16_Jan_2021.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_16_Mar_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_16_Oct_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_17_Jul_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_18_Feb_2021.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_18_May_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_19_Jul_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_19_May_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_19_Oct_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_20_May_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_21_Apr_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_21_May_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_22_Apr_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_25_Aug_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_25_Jan_2021.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_27_Apr_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_28_Aug_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_29_Jan_2020.xlsx" />
+    <Content Include="Summary\EAS_MarginImprovement_QuickSummary_Report_31_Aug_2020.xlsx" />
+    <Content Include="Summary\EAS_Margin_Improvement_Sheets.xlsx" />
+    <Content Include="T&amp;M Billing Rates\EAIS_TM_BillingRates.xlsx" />
+    <Content Include="T&amp;M Billing Rates\EAS_TM_BillingRates.xlsx" />
+    <Content Include="T&amp;M Billing Rates\ECAS_TM_BillingRates.xlsx" />
+    <Content Include="T&amp;M Billing Rates\ORC_TM_BillingRates.xlsx" />
+    <Content Include="T&amp;M Billing Rates\SAP_TM_BillingRates.xlsx" />
+    <Content Include="template\BK\Cost_Opt_template_EAIS.xlsb" />
+    <Content Include="template\BK\Cost_Opt_template_EAS.xlsb" />
+    <Content Include="template\BK\Cost_Opt_template_ECAS.xlsb" />
+    <Content Include="template\BK\Cost_Opt_template_ORC.xlsb" />
+    <Content Include="template\BK\Cost_Opt_template_SAP.xlsb" />
+    <Content Include="template\BK\MI Quick Summary - Template_0ld.xlsx" />
+    <Content Include="template\BK\SummarySheets - Lat.xlsx" />
+    <Content Include="template\BK\SummarySheets.xlsx" />
+    <Content Include="template\BK\SummarySheets_.xlsx" />
+    <Content Include="template\BK\SummarySheets_BK.xlsx" />
+    <Content Include="template\BK\SummarySheets_Dec.xlsx" />
+    <Content Include="template\BK\SummarySheets_old.xlsx" />
+    <Content Include="template\BK_06_Aug_2019\Cost_Opt_template_EAIS.xlsb" />
+    <Content Include="template\BK_06_Aug_2019\Cost_Opt_template_EAS.xlsb" />
+    <Content Include="template\BK_06_Aug_2019\Cost_Opt_template_ECAS.xlsb" />
+    <Content Include="template\BK_06_Aug_2019\Cost_Opt_template_ORC.xlsb" />
+    <Content Include="template\BK_06_Aug_2019\Cost_Opt_template_SAP.xlsb" />
+    <Content Include="template\BK_07_Aug_2019\Cost_Opt_template_EAIS.xlsb" />
+    <Content Include="template\BK_07_Aug_2019\Cost_Opt_template_EAS.xlsb" />
+    <Content Include="template\BK_07_Aug_2019\Cost_Opt_template_ECAS.xlsb" />
+    <Content Include="template\BK_07_Aug_2019\Cost_Opt_template_ORC.xlsb" />
+    <Content Include="template\BK_07_Aug_2019\Cost_Opt_template_SAP.xlsb" />
+    <Content Include="template\BK_08_MAY_2020\Cost_Opt_template_EAIS.xlsb" />
+    <Content Include="template\BK_08_MAY_2020\Cost_Opt_template_EAS.xlsb" />
+    <Content Include="template\BK_08_MAY_2020\Cost_Opt_template_ECAS.xlsb" />
+    <Content Include="template\BK_08_MAY_2020\Cost_Opt_template_ORC.xlsb" />
+    <Content Include="template\BK_08_MAY_2020\Cost_Opt_template_SAP.xlsb" />
+    <Content Include="template\ClientCategory\EAS_Client_Category.xlsm" />
+    <Content Include="template\ClientCategory\EAS_Client_Category_Digital.xlsm" />
+    <Content Include="template\ClientCategory\EAS_dashboard_chart3.xlsb" />
+    <Content Include="template\ClientCategory\EAS_dashboard_PD_CC.xlsb" />
+    <Content Include="template\ClientCategory\EAS_dashboard_PD_CC_Digital.xlsb" />
+    <Content Include="template\Cost_Opt_template_EAIS.xlsb" />
+    <Content Include="template\Cost_Opt_template_EAS.xlsb" />
+    <Content Include="Views\Cost\Index.cshtml" />
+    <Content Include="Views\Cost\Summary.cshtml" />
+    <Content Include="Upload Template\Attrition_Data_template.xlsx" />
+    <Content Include="Upload Template\BK\Attrition_Data_template1.xlsx" />
+    <Content Include="Upload Template\BK\Talent Mobility_template1.xlsx" />
+    <Content Include="Upload Template\Talent Mobility_template.xlsx" />
+    <Content Include="template\Cost_Opt_template_ECAS.xlsb" />
+    <Content Include="template\Cost_Opt_template_ORC.xlsb" />
+    <Content Include="template\Cost_Opt_template_SAP.xlsb" />
+    <Content Include="template\SummarySheets.xlsx" />
+    <Content Include="Views\Consolidated\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="DataPack_Full_Version\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63309</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:63309/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

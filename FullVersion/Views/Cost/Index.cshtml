@@ -1,0 +1,284 @@
+@model List<FullVersion.Models.SL_List>
+@{
+    ViewBag.Title = "Margin Improvement Report Generation";
+}
+@*<div align="center" style="text-decoration:underline">
+    <h3>Margin Improvement Report</h3>
+</div>*@
+@*<script src="scripts/jquery-1.10.2.js" type="text/javascript"></script>
+    <link href="bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="scripts/bootstrap.min.js"></script>*@
+@*<script type="text/javascript" src="scripts/bootbox.min.js"></script>*@
+
+
+<style>
+
+    a:focus, button:focus, select:focus {
+        outline: 0px !important;
+    }
+
+.container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
+    
+}
+</style>
+
+<script src="~/Scripts_1/jquery-1.10.2.js"></script>
+<link href="~/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<link href="~/Scripts_1/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts_1/bootstrap.min.js"></script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        var tab = document.getElementById('hidTAB').value;
+        $('#myTabs a[href="' + tab + '"]').tab('show');
+    });
+
+
+
+</script>
+<script src="~/Select2/JScriptSelect2.js" type="text/javascript"></script>
+<link href="~/Select2/select2.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+
+    $(function () {
+        initDropdown();
+    });
+
+    function initDropdown() {
+        $("#ddlfinyear,#ddlfinyear1,#ddlLoadType").select2({
+            selectOnClose: true,
+            minimumResultsForSearch: -1
+        })
+
+        $("#ddlType").select2({
+            selectOnClose: true,
+            minimumResultsForSearch: -1
+        }
+        ).on("change", function () {
+           
+            if ($("#ddlType").val() == 'Talent Mobility') {
+                setTimeout(function () {
+
+                    $('#Instruction1').hide();
+                    $('#Instruction2').show();
+                });
+            } else {
+                setTimeout(function () {
+
+                    $('#Instruction2').hide();
+                    $('#Instruction1').show();
+                });
+
+            }
+           
+        });
+    }
+
+</script>
+<div style="padding-left: 50px; padding-right: 50px; padding-top: 15px">
+    @*<input id="hidTAB" type="hidden" value="#menu2" />*@
+    @Html.HiddenFor(m => m[5].hidTAB, new { id = "hidTAB" })
+    <ul class="nav nav-tabs" id="myTabs">
+
+        <li><a data-toggle="tab" href="#menu5">MI Quick Summary</a></li>
+
+        <li class="active"><a data-toggle="tab" href="#menu2">MI Detailed Report Generation</a></li>
+
+        <li><a data-toggle="tab" href="#home">Data Generation</a></li>
+
+        <li><a data-toggle="tab" href="#menu3">Download</a></li>
+
+        <li><a data-toggle="tab" href="#menu4">BackUp</a></li>
+
+    </ul>
+
+    <div class="tab-content">
+
+        <div id="home" class="tab-pane fade" style="margin-top:50px">
+            @using (Html.BeginForm())
+            {
+
+
+
+                <div style="margin:0px auto;width:180px;">
+                    <div align="center" style="clear:both;padding-top:50px">
+                        <div style="float:left">
+                            <input id="Submit3" name="submit" type="submit" value="Submit" style="width:150px" class="btn btn-success" />
+                        </div>
+
+                    </div>
+                </div>
+            }
+        </div>
+        <div id="menu2" class="tab-pane fade" style="border-bottom:1px solid gray;border-left:1px solid gray;border-right:1px solid gray;height:350px;padding-top:50px">
+            <div style="margin-left:50px;">
+                @using (Html.BeginForm())
+                {
+
+                    <div style="float:left;">
+                        <select class="form-control" id="ddlfinyear" name="finyear" style="width:100px;margin-bottom:20px">
+
+                            <option>2022-23</option>
+
+                        </select>
+                    </div>
+                    
+
+                    for (var i = 0; i < Model.Count() - 1; i++)
+                    {
+
+
+                        <div style="float:left;font-family:Calibri;padding-top:5px;padding-left:5px">
+                            @Html.CheckBoxFor(it => it[i].Checked, new { Style = "vertical-            align:3px}" })
+                        </div>
+
+                        <div style="float:left;width:50px;margin-left:5px;padding-top:7px;">
+                            @Html.HiddenFor(it => it[i].Id)
+                            @Html.HiddenFor(it => it[i].SL)
+                            @Html.DisplayFor(it => it[i].SL)
+                        </div>
+
+
+
+                    }
+                    <div style="float:left;padding-top:7px">
+                        <label style="float:left;">Focussed Accounts : </label>
+                        
+                        <input type="radio" class="form-control" value="yes" name="isFocus" style="float:left;border:hidden;padding-bottom:15px;margin-left:10px" checked="checked"/>
+                        <label style="float:left;margin-left:10px">Include</label>
+                       
+                        <input type="radio" class="form-control" value="no" name="isFocus"  style="float:left;border:hidden;padding-bottom:15px;margin-left:10px"/>
+                        <label style="float:left;margin-left:10px">Exclude</label>
+                    </div>
+
+                    <div align="center" style="clear:both;padding-top:50px">
+
+                        <div style="float:left;margin-left:20px">
+                            <input id="Submit2" name="submit" type="submit" value="MI Generate" style="width:200px" class="btn btn-success" />
+                        </div>
+                    </div>
+
+                }
+            </div>
+
+        </div>
+        <div id="menu3" class="tab-pane fade" style="margin-top:50px">
+            <div style="margin-left:50px;">
+                @using (Html.BeginForm())
+                {
+
+                    <div style="float:left;">
+                        <select class="form-control" id="ddlfinyear" name="finyear" style="width:100px;margin-bottom:20px">
+
+                            <option>2022-23</option>
+
+                        </select>
+                    </div>
+
+
+                    for (var i = 0; i < Model.Count() - 1; i++)
+                    {
+
+
+                        <div style="float:left;font-family:Calibri;padding-top:5px;padding-left:5px">
+                            @Html.CheckBoxFor(it => it[i].Checked, new { Style = "vertical-            align:3px}" })
+                        </div>
+
+                        <div style="float:left;width:50px;margin-left:5px;padding-top:7px;">
+                            @Html.HiddenFor(it => it[i].Id)
+                            @Html.HiddenFor(it => it[i].SL)
+                            @Html.DisplayFor(it => it[i].SL)
+                        </div>
+
+
+
+                    }
+                   
+                    <div align="center" style="clear:both;padding-top:50px">
+
+                        <div style="float:left;margin-left:20px">
+                            <input id="Submit2" name="submit" type="submit" value="Generate" style="width:200px" class="btn btn-success" />
+                        </div>
+                    </div>
+
+                }
+            </div>
+        </div>
+        <div id="menu4" class="tab-pane fade" style="margin-top:50px">
+        </div>
+        <div id="menu5" class="tab-pane fade in active" style="border-bottom:1px solid gray;border-left:1px solid gray;border-right:1px solid gray;height:450px;padding-top:50px">
+            @using (Html.BeginForm("Index",
+                        "Cost",
+                        FormMethod.Post,
+                        new { enctype = "multipart/form-data" }))
+
+            {
+
+            <div style="margin:0px auto;width:1100px">
+                <div style="float:left;margin-right:20px">
+
+                    <select class="form-control" id="ddlfinyear1" name="finyear" style="width:100px;margin-bottom:20px">
+
+                        <option>2022-23</option>
+
+                    </select>
+                </div>
+                <div style="float:left;margin-right:20px">
+                    <select class="form-control" id="ddlLoadType" name="LoadType" style="width:150px;">
+
+                        <option>Before Actual Load</option>
+                        <option>After Actual Load</option>
+
+                    </select>
+                </div>
+                <div style="float:left;margin-right:20px">
+                    <select class="form-control" id="ddlType" name="Type" style="width:130px;">
+
+                        <option>Attrition</option>
+                        <option>Talent Mobility</option>
+
+                    </select>
+                </div>
+                <div style="float:left;margin-right:20px">
+                    <input type="file" name="uploadFile" required />
+                </div>
+
+                <div style="float:left;padding-right:80px">
+                    <input id="btn1" name="submit" type="submit" value="Upload" style="width:100px" class="btn btn-success" />
+                </div>
+                <div style="float:left;margin-left:10px">
+                    <input id="btnu" name="submit" type="submit" formnovalidate="formnovalidate" value="Download Template" style="width:150px" class="btn btn-success" />
+                </div>
+
+                <div id="Instruction1" style="width: 500px; float: left;margin-left:35px;padding:20px;border:1px solid #46b8da;
+                  margin-top:30px;border-radius:5px;background-color:#99C68E;font-family:Calibri;font-size:medium">
+                    <p>Instructions :</p>  <p>File name should be contains Attrition_*”.</p>  <p>Sheet name should be "Data".</p>  <p>save as type “Excel workbook”.</p>  <p>Browse the file “Attrition_*” and Click on Upload.</p>
+                </div>
+
+                <div id="Instruction2" style="width: 500px; float: left;margin-left:35px;padding:20px;border:1px solid #46b8da;display:none;
+                  margin-top:30px;border-radius:5px;background-color:#99C68E;font-family:Calibri;font-size:medium">
+                    <p>Instructions :</p>  <p>File name should be contains Talent Mobility_*”.</p>  <p>Sheet name should be "Data".</p>  <p>save as type “Excel workbook”.</p>  <p>Browse the file “Talent Mobility_*” and Click on Upload.</p>
+                </div>
+
+                <div style="padding-top:10px;clear:both">
+                    <span style="color:red">  @ViewBag.Message </span>
+                </div>
+                <div align="center" style="clear:both;padding-top:50px">
+                    <div style="float:left">
+                        <input id="btn2" name="submit" type="submit" formnovalidate="formnovalidate" value="MI Quick Summary Generate" style="width:250px" class="btn btn-success" />
+                    </div>
+
+                </div>
+
+            </div>
+            }
+
+        </div>
+    </div>
+
+</div>
+
