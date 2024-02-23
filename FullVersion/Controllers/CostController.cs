@@ -19,7 +19,7 @@ namespace FullVersion.Controllers
     public class CostController : Controller
     {
         //
-        // GET: /Cost/
+        // GET: /Cost//////
 
         //string path = Server.MapPath("~/FileValidation/");
         //IEnumerable<string> files1 = Directory.GetFiles(path);
